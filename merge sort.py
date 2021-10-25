@@ -7,7 +7,7 @@ def merge_sort(arr):
         merge_sort(left)
         merge_sort(right) # sort each half
         l = r = m = 0
-        while l < len(left) and r < len(right):
+        while l < len(left) and r < len(right): # from 2 sorted halfs, rebuild the original array by choosing the smaller elements
             if left[l] < right[r]:
                 arr[m] = left[l]
                 l += 1
@@ -15,11 +15,11 @@ def merge_sort(arr):
                 arr[m] = right[r]
                 r += 1
             m += 1
-        while l < len(left):
+        while l < len(left): # if any elements left in left, add them 
             arr[m] = left[l]
             l += 1
             m += 1
-        while r < len(right):
+        while r < len(right):  # if any elements left in right, add them 
             arr[m] = right[r]
             m += 1
             r += 1
