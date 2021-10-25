@@ -1,9 +1,9 @@
 #Insertion Sort
 def insertion_sort(arr):
     for i in range(1,len(arr)):
-        val = arr[i]
+        val = arr[i] # taking an element val
         j = i - 1
-        while j > 0 and val < arr[j]:
+        while j > 0 and val < arr[j]: # searching an element less than val and swapping it
             arr[j+1] = arr[j]
             j -= 1
         arr[j+1] = val
