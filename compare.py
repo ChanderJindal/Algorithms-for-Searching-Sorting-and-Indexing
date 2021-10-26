@@ -203,14 +203,14 @@ for i in range(1, 10):
     end = time.clock()
     elements2.append(len(a))
     times2.append(end-start)
-
+	
     a = randint(0, 1000 * i,1000*i)
     start = time.clock()
     insertion_sort(a)
     end = time.clock()
     elements3.append(len(a))
     times3.append(end-start)
-
+	
     a = randint(0, 1000 * i,1000*i)
     start = time.clock()
     quick_sort(0,len(a)-1,a)
