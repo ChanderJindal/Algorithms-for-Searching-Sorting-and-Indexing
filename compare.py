@@ -133,7 +133,7 @@ def merge(array, l, m, r):
     i=0
     j=0
     k=l
-    
+
     while j < array_length2 and  i < array_length1: 
         if left[i] <= right[j]: 
             array[k] = left[i] 
@@ -184,6 +184,8 @@ elements4 = list()
 times4 = list()
 elements5 = list()
 times5 = list()
+elements6 = list()
+times6 = list()
 
 for i in range(1, 10):
 
@@ -202,14 +204,12 @@ for i in range(1, 10):
     elements2.append(len(a))
     times2.append(end-start)
 
-    '''
     a = randint(0, 1000 * i,1000*i)
     start = time.clock()
     insertion_sort(a)
     end = time.clock()
     elements3.append(len(a))
     times3.append(end-start)
-'''
 
     a = randint(0, 1000 * i,1000*i)
     start = time.clock()
@@ -225,13 +225,21 @@ for i in range(1, 10):
     elements5.append(len(a))
     times5.append(end-start)
 
+    a = randint(0, 1000 * i,1000*i)
+    start = time.clock()
+    sorted(a)
+    end = time.clock()
+    elements6.append(len(a))
+    times6.append(end-start)
+
 plt.xlabel('List Length')
 plt.ylabel('Time Complexity')
 plt.plot(elements1, times1, label ='Heap Sort')
 plt.plot(elements2, times2, label ='Merge Sort')
-# plt.plot(elements3, times3, label ='Insertion Sort')
+plt.plot(elements3, times3, label ='Insertion Sort')
 plt.plot(elements4, times4, label ='Quick Sort')
 plt.plot(elements5, times5, label ='Tim Sort')
+plt.plot(elements6, times6, label ='In-built Sort')
 plt.grid()
 plt.legend()
 plt.show()    
